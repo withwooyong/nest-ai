@@ -27,7 +27,7 @@ export class RedisService implements OnModuleInit, OnModuleDestroy {
 
   async onModuleDestroy() {
     if (this.client) {
-      await this.client.disconnect();
+      await this.client.quit();
       console.log('Redis 연결 종료');
     }
   }
